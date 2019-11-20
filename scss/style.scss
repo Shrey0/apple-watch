@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+body{
+  padding:50px 0 0 0;
+  margin:0;
+}
+.container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  flex-direction:column;
+}
+.title{  
+  margin: 80px 0 0 0;
+  background-color:#999;
+  background:linear-gradient(to bottom right,#8360c3,#2ebf91);
+  font-family: 'Roboto Mono', monospace;
+  font-weight:bold;
+  padding:1rem 2rem;
+  color:#e5e5e5;
+  font-size: 1rem;
+  border-radius:3rem;
+}
+.watch{
+  position: relative;
+  &__hands{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    &--ring{
+      width:.5rem;
+      height:.5rem;
+      border:3px solid white;
+      border-radius:50%;
+    }
+    &--min{
+      width:.6rem;
+      position:absolute;
+      height:4.2rem;
+      top:50%;
+      left:22%;
+      background-color:white;
+      border-radius:3rem;
+      transform-origin:50% 0%;    
+      transition:all 2s;
+      &:after{
+        content:'';
+        position:absolute;
+        width:.3rem;
+        height:1rem;
+        background-color:white;
+        border-radius:3rem;
+        top:-10%;
+        left:30%;
+      }
+    }
+    &--sec{
+      width:.15rem;
+      position:absolute;
+      height:4.8rem;
+      top:50%;
+      left:50%;
+      background-color:orange;
+      border-radius:3rem;
+      transform-origin:50% 0%;
+      animation: handMove 60s linear infinite;
+    }
+    &--hour{
+      width:.7rem;
+      position:absolute;
+      height:3.2rem;
+      top:50%;
+      background-color:white;
+      border-radius:3rem;
+      transform-origin:50% 0%;  
+      transition:all 2s;
+      &:after{
+        content:'';
+        position:absolute;
+        width:.3rem;
+        height:1rem;
+        background-color:white;
+        border-radius:3rem;
+        top:-10%;
+        left:30%;
+      }
+    }
+  }
+  &__buttons
+  {
+    position:absolute;
+    right:-7%;
+    top:20%;
+    &--dial{
+        height:3rem;
+        width:1rem;
+        background:linear-gradient(to bottom,#444,#a1a1a1,#444);
+      border-right:3px dotted #333;
+      border-radius:2rem;
+      overflow:hidden;
+      position:relative;
+      &:before{
+        content:'';
+        position:absolute;
+        left:35%;
+        top:-120%;
+        height:500%;
+        width:3rem;
+        border-radius:50%;
+        transform:rotate(-3.3deg);
+        border:4px solid #333;       
+      }
+    }
+    &--button{
+      height:4rem;
+        width:.65rem;
+        background:linear-gradient(to bottom,#333 20%,#a1a1a1 60%,#333 );
+      border-radius:2rem;
+      overflow:hidden;              border-right:.5px solid #333;
+      margin-top:1.5rem;
+      position:relative;
+    }
+  }
+  &__case{
+    display:flex;
+    position:relative;
+    z-index:1;
+    &--1{
+    width:6rem;
+    height:14rem;
+    border-radius: 2rem 0 0 2rem;
+    background:linear-gradient(to right,#444,#d5d5d5);
+    }
+    &--2{width:6rem;
+    height:14rem;
+    background:linear-gradient(to left,#444,#d5d5d5);
+      border-radius: 0rem 2rem 2rem 0rem;
+      border-color:transparent;
+    }
+    &__connect{
+      width:12.3rem;
+      height:14.5rem;
+      background-color:#333;
+      border-radius:2rem;
+      position:absolute;
+      z-index:-1;
+      left:-.2rem;
+      top:-.3rem;
+    }
+    &--3{
+      width:11.2rem;
+      height:13.2rem;
+      background-image:url("https://i.ibb.co/zV82Dmr/react-progress-label.jpg");
+      background-color:#000;               filter:grayscale(.4);
+      background-size:cover;
+      background-position:bottom;
+      border-radius:1.9rem;
+      position:absolute;
+      left:0.3rem;
+      top:0.3rem;
+      border:1px solid #222;
+      overflow:hidden;
+      &::before{
+        position:absolute;
+        content:'';
+        width:100%;
+        height:200rem;
+        top:-199.1rem;
+        border-radius:3rem;
+        background:linear-gradient(to bottom,#ffffff 99.5%,#555 );
+      }
+      &::after{
+        position:absolute;
+        content:'';
+        width:100rem;
+        height:200%;
+        top:-50%;
+        left:-99.4rem;
+        border-radius:1rem;
+        background:linear-gradient(to right,#ffffff 99.5%,#666 );
+        opacity:.5;
+        box-shadow:1px 0 10px 5px #666;
+      }
+    }
+  }
+  &__band{
+    width:9rem;
+    height:8rem;    
+    border:1px solid #222;
+    border-radius:1rem 1rem 1rem 1rem;
+    &__top{
+      position:absolute;
+      top:-33%;
+      background:linear-gradient(to bottom,#333,#555);
+      left:12%;
+      &:before{
+         content:'';
+        position:absolute;
+        border-right:10px solid #444;
+        left:-109%;
+        top:15%;
+        width:10rem;
+        height:2rem;
+        transform:rotate(20deg);
+        border-radius:2rem;
+      }
+      &:after{
+         content:'';
+        position:absolute;
+        border-left:10px solid #444;
+        right:-109%;
+        top:15%;
+        width:10rem;
+        height:2rem;
+        transform:rotate(-20deg);
+        border-radius:2rem;
+      }
+    }
+    &__bottom{
+      position:absolute;
+      bottom:-25%;
+      left:12%;
+      background:linear-gradient(to top,#333,#555);     
+    }    
+  }
+}
+@keyframes handMove{ 0% {
+    transform:rotate(0deg);
+  }  
+  100% {
+    transform:rotate(360deg);
+  }
+}
